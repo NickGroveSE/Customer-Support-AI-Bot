@@ -2,6 +2,16 @@
   width: 100%;
   height: 100%;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+}
+
+#wrapper {
+  width: 100vw;
+  height: 100vh;
   display: flex; 
   justify-content: center; 
   align-items: center;
@@ -11,10 +21,79 @@
 #content {
   width: 40vw;
   height: 80vh;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
   border: 1px solid white;
   border-radius: 5px;
 }
 
-#eye-icon {
-  box-shadow: 0 0 30px 3px red;
+.glow {
+  filter: drop-shadow(0 0 0.75rem #00ffff);
 }
+
+.eye {
+  position: absolute;
+}
+
+#left-eye {
+  left: calc(50vw - 70px);
+  top: 15vh;
+}
+
+#right-eye {
+  left: calc(50vw + 10px);
+  top: 15vh;
+}
+
+.pupil{
+  position: absolute;
+  transition: transform 10s ease-in;
+}
+
+.animated {
+  animation: 8s lookAround infinite;
+}
+
+#left-pupil {
+  left: calc(50vw - 65px);
+  top: calc(15vh + 10px);
+}
+
+#right-pupil {
+  left: calc(50vw + 15px);
+  top: calc(15vh + 10px);
+}
+
+@keyframes lookAround {
+
+  5% {
+    transform: translate(0, 0);
+  }
+
+  15% {
+    transform: translate(27px, 0);
+  }
+  
+  35% {
+    transform: translate(27px, 0);
+  }
+
+  45% {
+    transform: translate(0, 0);
+  }
+
+}
+
+#chat {
+  width: 20vw;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+
