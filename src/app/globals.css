@@ -24,8 +24,6 @@ body {
   display: flex; 
   justify-content: center; 
   align-items: center;
-  border: 1px solid white;
-  border-radius: 5px;
 }
 
 .glow {
@@ -48,11 +46,15 @@ body {
 
 .pupil{
   position: absolute;
-  transition: transform 10s ease-in;
+  transition: translate 0.5s ease-in;
 }
 
-.animated {
+.idle {
   animation: 8s lookAround infinite;
+}
+
+.focused {
+  animation: 5s lookDown infinite;
 }
 
 #left-pupil {
@@ -67,20 +69,52 @@ body {
 
 @keyframes lookAround {
 
-  5% {
+  10% {
     transform: translate(0, 0);
   }
 
-  15% {
+  20% {
     transform: translate(27px, 0);
   }
   
-  35% {
+  40% {
     transform: translate(27px, 0);
   }
 
-  45% {
+  50% {
     transform: translate(0, 0);
+  }
+
+}
+
+@keyframes lookDown {
+
+  0% {
+    transform: translate(6px, 20px);
+  }
+
+  30% {
+    transform: translate(6px, 20px);
+  }
+
+  35% {
+    transform: translate(20px, 20px);
+  }
+
+  60% {
+    transform: translate(20px, 20px);
+  }
+
+  65% {
+    transform: translate(13px, 20px);
+  }
+
+  95% {
+    transform: translate(13px, 20px);
+  }
+
+  100% {
+    transform: translate(6px, 20px);
   }
 
 }
